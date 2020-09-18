@@ -1,6 +1,6 @@
 node{
   stage('SCM Checkout'){
-	  git branch: 'wartomcat', url: 'https://github.com/prabhatpankaj/devopsprojects.git'
+	  git branch: 'wartomcat', url: 'https://github.com/shivaramkhanal/devopsprojects.git'
   
 	}
   
