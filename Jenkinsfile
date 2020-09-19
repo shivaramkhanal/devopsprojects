@@ -14,8 +14,8 @@ node{
 	  sshagent(['shivaram']) {
 	    //sh 'scp -i StrictHostKeyChecking=no target/*.war ubuntu@:3.95.168.106/opt/tomcat9/webapps/'
             //sh 'scp -i /home/ec2-user/jenkins-demo.pem -o StrictHostKeyChecking=no target/*.war ec2-user@100.26.175.204:/opt/tomcat9/webapps/'  
-	  sh 'mv /var/lib/jenkins/workspace/JenkinsPipeline/target/*.war target/shipwick.war'
-    sh 'scp -i /code.pem -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/JenkinsPipeline/target/shipwick.war ubuntu@:3.95.168.106/opt/tomcat8/webapps/'
+	
+    sh 'scp -i /code.pem -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/JenkinsPipeline/target/*.war ubuntu@:3.95.168.106/opt/tomcat8/webapps/'
 	}
   
 	}
