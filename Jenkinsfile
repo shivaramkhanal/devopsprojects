@@ -10,8 +10,10 @@ node{
 	}
   
   stage('Deploy to Tomcat'){
+	  sh 'who'
 	  sshagent(['shivaram']) {
-	    sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@:3.95.168.106/opt/tomcat9/webapps/'
+	    sh 'scp -i StrictHostKeyChecking=no target/*.war ubuntu@:3.95.168.106/opt/tomcat9/webapps/'
+            //sh 'scp -i /home/ec2-user/jenkins-demo.pem -o StrictHostKeyChecking=no target/*.war ec2-user@100.26.175.204:/opt/tomcat9/webapps/'  
 	}
   
 	}
