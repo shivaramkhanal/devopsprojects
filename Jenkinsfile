@@ -13,7 +13,7 @@ node{
 	  
 	  sshagent(['shivaram']) {
           sh 'who'
-	  sh 'scp -i /var/lib/jenkins/code.pem -o StrictHostKeyChecking=no target/*.war ubuntu@100.26.175.204:/opt/tomcat9/webapps/'
+	  sh 'scp -i ec2-user/var/lib/jenkins/code.pem -o StrictHostKeyChecking=no target/*.war ubuntu@100.26.175.204:/opt/tomcat9/webapps/'
 	
 	}
   
