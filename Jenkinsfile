@@ -10,14 +10,13 @@ node{
 	}
   
   stage('Deploy to Tomcat'){
-	  sshagent(['tomcat-dev']) {
-	    sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.234.143.115:/opt/tomcat9/webapps/'
+	  sshagent(['shivaram']) {
+	    sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@:54.211.232.145/opt/tomcat9/webapps/'
 	}
   
 	}
 	
 stage('Slack Notification'){
-	slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkinsnotification', color: '#fc0324', message: 'New Build deployed by prabhat', teamDomain: 'intelycoreworkspace', tokenCredentialId: 'slack-secret'
-	}
-  
+	
+ slackSend  baseUrl: 'https://hooks.slack.com/services/',channel: 'jenkins-demo', color: '#439FE0', message: 'Build Started:${env.JOB_NAME} ${BUILD_NUMBER}', tokenCredentialId: 'jenkins-demo'
 }
