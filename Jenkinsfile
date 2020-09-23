@@ -22,8 +22,8 @@ stage('Slack Notification'){
 	}
 	
 stage('Email Notification'){
-	//mail bcc: '', body: 'build success done', cc: '', from: 'prabhat@aptence.com', replyTo: 'prabhatiitbhu@gmail.com', subject: 'build success by prabhat', to: 'prabhatiitbhu@gmail.com'
-	emailext body: 'success done !!', subject: 'jenkins work email', to: 'shiva.khanal20@gmail.com'
+	mail bcc: '', body: 'build success done', cc: '', from: 'shiva.khanal19@gmail.com', replyTo: 'shiva.khanal20@gmail.com', subject: 'build success by shiva', to: 'shiva.khanal20@gmail.com'
+	//emailext body: 'success done !!', subject: 'jenkins work email', to: 'shiva.khanal20@gmail.com'
 }
 	
   
