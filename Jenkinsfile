@@ -17,9 +17,9 @@ node{
   
 	}
 	
-stage('Slack Notification'){
-	slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkinsnotification', color: '#fc0324', message: 'New Build deployed by prabhat', teamDomain: 'intelycoreworkspace', tokenCredentialId: 'slack-secret'
-	}
+//stage('Slack Notification'){
+//	slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkinsnotification', color: '#fc0324', message: 'New Build deployed by prabhat', teamDomain: 'intelycoreworkspace', tokenCredentialId: 'slack-secret'
+//	}
 	
 stage('Email Notification'){
 	mail bcc: '', body: 'build success done', cc: '', from: 'shiva.khanal19@gmail.com', replyTo: 'shiva.khanal20@gmail.com', subject: 'build success by shiva', to: 'shiva.khanal20@gmail.com'
