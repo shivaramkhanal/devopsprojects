@@ -1,6 +1,6 @@
 node{
   stage('SCM Checkout'){
-	  git branch: 'wartomcat', url: 'https://github.com/prabhatpankaj/devopsprojects.git'
+	  git branch: 'smtpjenkins', url: 'https://github.com/prabhatpankaj/devopsprojects.git'
   
 	}
   
@@ -12,7 +12,7 @@ node{
   stage('Deploy to Tomcat'){
 	  sshagent(['shivaram']) {
 	   sh 'who'
-	  sh 'scp -i /var/lib/jenkins/code.pem -o StrictHostKeyChecking=no target/*.war ubuntu@34.238.155.111:/opt/tomcat9/webapps/'
+	  sh 'scp -i /var/lib/jenkins/code.pem -o StrictHostKeyChecking=no target/*.war ubuntu@100.24.4.108:/opt/tomcat9/webapps/'
 	}
   
 	}
@@ -22,9 +22,9 @@ node{
 //	}
 	
 stage('Email Notification'){
-	//mail bcc: '', body: 'build success done', cc: '', from: 'shiva.khanal19@gmail.com', replyTo: 'shiva.khanal20@gmail.com', subject: 'build success by shiva', to: 'shiva.khanal20@gmail.com'
+	mail bcc: '', body: 'build success done', cc: '', from: 'shiva.khanal19@gmail.com', replyTo: 'shiva.khanal19@gmail.com', subject: 'build success by shiva', to: 'shiva.khanal19@gmail.com'
 	//emailext body: 'success done !!', subject: 'jenkins work email', to: 'shiva.khanal20@gmail.com'
-	emailext body: 'successfully notified', subject: 'nothing done', to: 'shiva.khanal20@gmail.com'
+	//emailext body: 'successfully notified', subject: 'nothing done', to: 'shiva.khanal20@gmail.com'
 }
 	
   
