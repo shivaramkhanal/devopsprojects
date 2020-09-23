@@ -10,8 +10,9 @@ node{
 	}
   
   stage('Deploy to Tomcat'){
-	  sshagent(['tomcat-dev']) {
-	    sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.234.143.115:/opt/tomcat9/webapps/'
+	  sshagent(['shivaram']) {
+	   sh 'who'
+	  sh 'scp -i /var/lib/jenkins/code.pem -o StrictHostKeyChecking=no target/*.war ubuntu@34.238.155.111:/opt/tomcat9/webapps/'
 	}
   
 	}
@@ -21,7 +22,9 @@ stage('Slack Notification'){
 	}
 	
 stage('Email Notification'){
-	mail bcc: '', body: 'build success done', cc: '', from: 'prabhat@aptence.com', replyTo: 'prabhatiitbhu@gmail.com', subject: 'build success by prabhat', to: 'prabhatiitbhu@gmail.com'
-	}
+	//mail bcc: '', body: 'build success done', cc: '', from: 'prabhat@aptence.com', replyTo: 'prabhatiitbhu@gmail.com', subject: 'build success by prabhat', to: 'prabhatiitbhu@gmail.com'
+	emailext body: 'success done !!', subject: 'jenkins work email', to: 'shiva.khanal20@gmail.com'
+}
+	
   
 }
